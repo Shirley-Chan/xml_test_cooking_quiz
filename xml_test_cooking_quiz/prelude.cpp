@@ -16,7 +16,7 @@ template<typename T_> T_ input(const wchar_t* echo_str, const T_ max = limit<T_>
 		std::cin >> buf;//入力を受ける
 		if (max < buf || buf < min) throw std::out_of_range("input is iligal");//範囲チェック
 	}
-	catch (std::exception& er) {
+	catch (const std::exception& er) {
 		std::cerr << er.what() << std::endl;//エラーメッセージ表示
 		return input(L"再入力してください。", max, min);//エラー時は再帰する方向で
 	}

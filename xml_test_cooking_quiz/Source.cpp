@@ -1,4 +1,4 @@
-#include "xmlreader_simple.h"
+ï»¿#include "xmlreader_simple.h"
 #include "nodelist_map.h"
 #include "prelude.h"
 #include "xml_checker.h"
@@ -34,38 +34,38 @@ std::wstring rep_LF(std::wstring&& str) {
 void show_last_message(const bool isAllcrear, const bool judge_correct, const uint8_t judge_user_level) {
 	static const auto message = make_array(
 		make_array(
-			L"“ü—Íƒ~ƒX‚©—V‚Ñ‚¾‚ÆM‚¶‚Ä‚¢‚Ü‚·B",
-			L"“ü—Íƒ~ƒX‚©—V‚Ñ‚¾‚ÆM‚¶‚Ä‚¢‚Ü‚·B",
-			L"–²ƒpƒeƒB‚ÅÄŠm”F‚µ‚Ä‚à‚¤ˆê“x’§í‚µ‚Ä‚­‚¾‚³‚¢‚ËB",
-			L"Ÿ‚ÍŠæ’£‚Á‚Ä‚­‚¾‚³‚¢‚ËB"
+			L"å…¥åŠ›ãƒŸã‚¹ã‹éŠã³ã ã¨ä¿¡ã˜ã¦ã„ã¾ã™ã€‚",
+			L"å…¥åŠ›ãƒŸã‚¹ã‹éŠã³ã ã¨ä¿¡ã˜ã¦ã„ã¾ã™ã€‚",
+			L"å¤¢ãƒ‘ãƒ†ã‚£ã§å†ç¢ºèªã—ã¦ã‚‚ã†ä¸€åº¦æŒ‘æˆ¦ã—ã¦ãã ã•ã„ã­ã€‚",
+			L"æ¬¡ã¯é ‘å¼µã£ã¦ãã ã•ã„ã­ã€‚"
 		),
 		make_array(
-			L"ŠÈ’P‚Å‚µ‚½‚æ‚ËHŠÈ’P‚·‚¬‚Ä‚·‚¢‚Ü‚¹‚ñB",
-			L"ŠÈ’P‚Å‚µ‚½‚æ‚ËHŠÈ’P‚·‚¬‚Ä‚·‚¢‚Ü‚¹‚ñB",
-			L"‚ ‚È‚½‚Í–{“–‚É–²ƒpƒeƒBˆ¤‚µ‚Ä‚Ü‚·‚ËB",
-			L"ƒNƒŠƒA‚¨‚ß‚Å‚Æ‚¤‚²‚´‚¢‚Ü‚·B"
+			L"ç°¡å˜ã§ã—ãŸã‚ˆã­ï¼Ÿç°¡å˜ã™ãã¦ã™ã„ã¾ã›ã‚“ã€‚",
+			L"ç°¡å˜ã§ã—ãŸã‚ˆã­ï¼Ÿç°¡å˜ã™ãã¦ã™ã„ã¾ã›ã‚“ã€‚",
+			L"ã‚ãªãŸã¯æœ¬å½“ã«å¤¢ãƒ‘ãƒ†ã‚£æ„›ã—ã¦ã¾ã™ã­ã€‚",
+			L"ã‚¯ãƒªã‚¢ãŠã‚ã§ã¨ã†ã”ã–ã„ã¾ã™ã€‚"
 		)
 	);
 	std::wcout << message[isAllcrear][judge_user_level] << std::endl;
-	if (judge_correct && 4 == judge_user_level && !isAllcrear) std::wcout << L"Ÿ‚Í‘S–â³‰ğ‚ğ–Úw‚µ‚Ü‚µ‚å‚¤B" << std::endl;
+	if (judge_correct && 4 == judge_user_level && !isAllcrear) std::wcout << L"æ¬¡ã¯å…¨å•æ­£è§£ã‚’ç›®æŒ‡ã—ã¾ã—ã‚‡ã†ã€‚" << std::endl;
 	pause_console();
 	clear_console();
 	std::wcout
-		<< L"‚±‚ÌƒQ[ƒ€‚Ì–â‘è‚ÍˆÈã‚É‚È‚è‚Ü‚·B‚à‚µ‚±‚ñ‚ÈƒQ[ƒ€ì‚Á‚Ä‚Ù‚µ‚¢A–â‘è‚ğ‘‚â‚µ‚Ä‚Ù‚µ‚¢“™‚ ‚è‚Ü‚µ‚½‚çAreadme‚É‘‚©‚ê‚Ü‚µ‚½ƒ[ƒ‹ƒAƒhƒŒƒX‚ÖB"
+		<< L"ã“ã®ã‚²ãƒ¼ãƒ ã®å•é¡Œã¯ä»¥ä¸Šã«ãªã‚Šã¾ã™ã€‚ã‚‚ã—ã“ã‚“ãªã‚²ãƒ¼ãƒ ä½œã£ã¦ã»ã—ã„ã€å•é¡Œã‚’å¢—ã‚„ã—ã¦ã»ã—ã„ç­‰ã‚ã‚Šã¾ã—ãŸã‚‰ã€readmeã«æ›¸ã‹ã‚Œã¾ã—ãŸãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ã¸ã€‚"
 		<< std::endl
-		<< L"VìƒQ[ƒ€î•ñ“™‚ÍAreadme‚ÌƒŠƒ“ƒN‚©‚çƒAƒNƒZƒX‚Å‚«‚Ü‚·ƒuƒƒO‚É‡Ÿ‹LÚ‚µ‚Ä‚¢‚«‚Ü‚·B"
+		<< L"æ–°ä½œã‚²ãƒ¼ãƒ æƒ…å ±ç­‰ã¯ã€readmeã®ãƒªãƒ³ã‚¯ã‹ã‚‰ã‚¢ã‚¯ã‚»ã‚¹ã§ãã¾ã™ãƒ–ãƒ­ã‚°ã«é †æ¬¡è¨˜è¼‰ã—ã¦ã„ãã¾ã™ã€‚"
 		<< std::endl;
 }
 bool ask(ans_v ans, const size_t q_id, const uint8_t user_level, const int correct_answer, const nodelist_map& nodelist) {
 	answer re;
-	//–â‘è•¶•\¦, ‰ñ“š“ü—Í
+	//å•é¡Œæ–‡è¡¨ç¤º, å›ç­”å…¥åŠ›
 	re.user_answer = input_num(rep_LF(nodelist.question[q_id].get_text()), std::stoi(nodelist.choices_num[q_id].get_text()), 1);
 	re.jude_correct = (correct_answer == re.user_answer);
 	bool judge_continue = re.jude_correct;
-	std::wcout << ((re.jude_correct) ? L"³‰ğ" : L"•s³‰ğ") << L"‚Å‚·B" << std::endl;
+	std::wcout << ((re.jude_correct) ? L"æ­£è§£" : L"ä¸æ­£è§£") << L"ã§ã™ã€‚" << std::endl;
 	if (!re.jude_correct && 4 == user_level) {
-		std::wcout << "³‰ğ‚Í" << correct_answer << "‚Å‚·B" << std::endl
-			<< nodelist.explanation[q_id].get_text() << std::endl;////‰ğà•\¦
+		std::wcout << "æ­£è§£ã¯" << correct_answer << "ã§ã™ã€‚" << std::endl
+			<< nodelist.explanation[q_id].get_text() << std::endl;////è§£èª¬è¡¨ç¤º
 		if (std::stoi(nodelist.IsNotForBiginner[q_id].get_text())) judge_continue = true;
 	}
 	pause_console();
@@ -76,21 +76,21 @@ bool ask(ans_v ans, const size_t q_id, const uint8_t user_level, const int corre
 int main() {
 	try {
 		std::wcout.imbue(std::locale("japanese"));
-		std::wcout << L"ƒNƒCƒY@`‚ ‚È‚½‚ÍƒpƒeƒBƒVƒG`" << std::endl << std::endl;
-		if (2 == choose_one_from_two(L"ŠJnc‚P@I—¹c‚Q")) return 0;
+		std::wcout << L"ã‚¯ã‚¤ã‚ºã€€ï½ã‚ãªãŸã¯ãƒ‘ãƒ†ã‚£ã‚·ã‚¨ï½" << std::endl << std::endl;
+		if (2 == choose_one_from_two(L"é–‹å§‹â€¦ï¼‘ã€€çµ‚äº†â€¦ï¼’")) return 0;
 		const auto correct_answer = make_array(3, 2, 2, 1, 3, 3, 3, 3, 1, 1, 4, 2, 1, 6, 4, 2, 2, 3, 1);
 		//xml read
 		auto xml = xmldoc_c(L"question.xml");
 		const auto path_base = std::wstring(L"questionbook/questiondata/");
 		auto nodelist = nodelist_map(xml[path_base + L"question"], xml[path_base + L"explanation"], xml[path_base + L"IsNotForBiginner"], xml[path_base + L"choices_num"]);
-		if (!xml_checker(correct_answer.size(), nodelist)) return -1;//xml‚Ì—v‘f”‚Æ³‰ğ‚Ì”‚·‚×‚Ä‚ªˆê’v‚µ‚È‚¢ê‡ƒvƒƒOƒ‰ƒ€I—¹
-		const auto user_level = prelude_question();//–‘O¿–â
-		const auto sequence_of_questions_number = decide_sequence_of_questions_number(user_level);//–â‘è‡˜‚ÌŒˆ’è
-		std::wcout << L"‰ñ“š‚ ‚è‚ª‚Æ‚¤‚²‚´‚¢‚Ü‚·B‚»‚ê‚Å‚Ín‚ß‚Ü‚·B" << std::endl;
+		if (!xml_checker(correct_answer.size(), nodelist)) return -1;//xmlã®è¦ç´ æ•°ã¨æ­£è§£ã®æ•°ã™ã¹ã¦ãŒä¸€è‡´ã—ãªã„å ´åˆãƒ—ãƒ­ã‚°ãƒ©ãƒ çµ‚äº†
+		const auto user_level = prelude_question();//äº‹å‰è³ªå•
+		const auto sequence_of_questions_number = decide_sequence_of_questions_number(user_level);//å•é¡Œé †åºã®æ±ºå®š
+		std::wcout << L"å›ç­”ã‚ã‚ŠãŒã¨ã†ã”ã–ã„ã¾ã™ã€‚ãã‚Œã§ã¯å§‹ã‚ã¾ã™ã€‚" << std::endl;
 		pause_console();
 		clear_console();
 
-		//¿–â
+		//è³ªå•
 		bool judge_correct = true;
 		ans_v answer;
 		for (size_t i = 0; judge_correct == true && i < sequence_of_questions_number.size(); ++i) {
@@ -98,10 +98,10 @@ int main() {
 			judge_correct = ask(answer, question_id, user_level, correct_answer[question_id], nodelist);
 		}
 		bool isAllcrear = true;
-		for (auto& i : answer) isAllcrear &= i.jude_correct;//‘S–â³‰ğ‚©’²‚×‚é
+		for (auto& i : answer) isAllcrear &= i.jude_correct;//å…¨å•æ­£è§£ã‹èª¿ã¹ã‚‹
 		show_last_message(isAllcrear, judge_correct, user_level);
 	}
-	catch (std::exception er) {
+	catch (const std::exception& er) {
 		std::cerr << er.what() << std::endl;
 	}
 	return 0;

@@ -3,12 +3,12 @@
 #include <string>
 #include <msxml.h>
 #include <exception>
+#include <stdexcept>
 #include <iterator>
-
-class xml_runtime_error : std::runtime_error{
+class xml_runtime_error : public std::runtime_error{
 public:
-	xml_runtime_error(const std::string& what_arg) : std::runtime_error("xml_runtime_error : " + what_arg) {}
-	xml_runtime_error(const char* what_arg) : std::runtime_error(std::string("xml_runtime_error : ") + what_arg) {}
+	explicit xml_runtime_error(const std::string& what_arg) : std::runtime_error("xml_runtime_error : " + what_arg) {}
+	explicit xml_runtime_error(const char* what_arg) : std::runtime_error(std::string("xml_runtime_error : ") + what_arg) {}
 };
 class olestring
 {
@@ -43,8 +43,8 @@ public:
 	xmlnode_c operator*() const;
 	bool operator==(const xmllist_iterator_c& iterator) const noexcept;
 	bool operator!=(const xmllist_iterator_c& it) const noexcept;
-	xmllist_iterator_c& xmllist_iterator_c::operator++() noexcept;
-	xmllist_iterator_c xmllist_iterator_c::operator++(int) noexcept;
+	xmllist_iterator_c& operator++() noexcept;
+	xmllist_iterator_c operator++(int) noexcept;
 private:
 	friend xmllist_c;
 	xmllist_iterator_c();
