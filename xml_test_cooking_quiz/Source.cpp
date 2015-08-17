@@ -75,7 +75,11 @@ bool ask(ans_v ans, const size_t q_id, const uint8_t user_level, const int corre
 }
 int main() {
 	try {
-		std::wcout.imbue(std::locale("japanese"));
+#ifdef _MSC_VER
+		std::wcout.imbue(std::locale("japanese"));//locale設定
+#else
+		std::wcout.imbue(std::locale("ja_JP.UTF-8"));
+#endif
 		std::wcout << L"クイズ　～あなたはパティシエ～" << std::endl << std::endl;
 		if (2 == choose_one_from_two(L"開始…１　終了…２")) return 0;
 		const auto correct_answer = make_array(3, 2, 2, 1, 3, 3, 3, 3, 1, 1, 4, 2, 1, 6, 4, 2, 2, 3, 1);

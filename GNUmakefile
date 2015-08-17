@@ -2,7 +2,7 @@
 
 TARGET 	= xml_test_cooking_quiz.exe
 SRCS 	= ./xml_test_cooking_quiz/Environment-dependent.cpp ./xml_test_cooking_quiz/hlesult_to_std_string.cpp ./xml_test_cooking_quiz/hresult_to_std_wstring.cpp ./xml_test_cooking_quiz/prelude.cpp ./xml_test_cooking_quiz/Source.cpp ./xml_test_cooking_quiz/xml_checker.cpp ./xml_test_cooking_quiz/xmlreader_simple.cpp
-
+ADD :=
 # 基本コマンド
 RM 		:= rm
 CXX 	:= g++
@@ -14,9 +14,9 @@ CXX_RELEASE_FLAGS	=	-O2
 
 # 基本オプション
 ifeq ($(CXX),gcc)
-CPPFLAGS = --input-charset=utf-8 -fexec-charset=CP932 -std=c++14
+CPPFLAGS = --input-charset=utf-8 -fexec-charset=CP932 -std=c++14 -lOle32 -lOleAut32 -lmsxml3 -luuid
 else
-CPPFLAGS = -std=c++14
+CPPFLAGS = -std=c++14 -lOle32 -lOleAut32 -lmsxml3 -luuid
 endif
 
 # make
@@ -36,7 +36,7 @@ Release: all
 
 all: $(TARGET)
 $(TARGET): $(SRCS)
-	$(CXX) $^ -o $@ $(CXXFLAGS) $(CPPFLAGS)
+	$(CXX) $^ -o $@ $(ADD) $(CXXFLAGS) $(CPPFLAGS)
 
 # make clean
 .PHONY: clean

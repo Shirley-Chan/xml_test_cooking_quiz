@@ -1,4 +1,5 @@
 ﻿#pragma once
+//need -lOle32 -lOleAut32 -lmsxml3 -luuid
 #include <cstddef>
 #include <string>
 #include <msxml.h>
