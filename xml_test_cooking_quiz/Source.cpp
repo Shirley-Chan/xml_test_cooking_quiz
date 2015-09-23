@@ -78,7 +78,7 @@ int main() {
 #ifdef _MSC_VER
 		std::wcout.imbue(std::locale("japanese"));//locale設定
 #else
-		std::wcout.imbue(std::locale("ja_JP.UTF-8"));
+		std::wcout.imbue(std::locale("C"));
 #endif
 		std::wcout << L"クイズ　～あなたはパティシエ～" << std::endl << std::endl;
 		if (2 == choose_one_from_two(L"開始…１　終了…２")) return 0;

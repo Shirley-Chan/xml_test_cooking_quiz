@@ -14,7 +14,7 @@ public:
 class olestring
 {
 public:
-	olestring(const wchar_t* str);
+	explicit olestring(const wchar_t* str);
 	~olestring();
 	BSTR c_str() const noexcept{
 		return this->str;
@@ -31,7 +31,7 @@ class xmllist_c;
 class xmlnode_c
 {
 public:
-	xmlnode_c(IXMLDOMNode* node);
+	explicit xmlnode_c(IXMLDOMNode* node);
 	~xmlnode_c();
 	std::wstring get_text() const;
 private:
@@ -56,7 +56,7 @@ private:
 class xmllist_c
 {
 public:
-	xmllist_c(IXMLDOMNodeList* list);
+	explicit xmllist_c(IXMLDOMNodeList* list);
 	xmllist_c(const xmllist_c& other);
 	xmllist_c(xmllist_c && other);
 	~xmllist_c();
@@ -67,8 +67,8 @@ public:
 		return this->len;
 	}
 	typedef xmllist_iterator_c iterator;
-	xmllist_c::iterator begin() noexcept;
-	xmllist_c::iterator end() noexcept;
+	iterator begin() noexcept;
+	iterator end() noexcept;
 	xmlnode_c at(size_t index) const;
 	xmlnode_c get(size_t index) const;
 	xmlnode_c operator[](size_t index) const;
@@ -80,8 +80,8 @@ private:
 class xmldoc_c
 {
 public:
-	xmldoc_c(const wchar_t* xml_name);
-	xmldoc_c(const std::wstring& xml_name);
+	explicit xmldoc_c(const wchar_t* xml_name);
+	explicit xmldoc_c(const std::wstring& xml_name);
 	~xmldoc_c();
 	xmllist_c get(const wchar_t* node_path) const;
 	xmllist_c get(const std::wstring& node_path) const{ return this->get(node_path.c_str()); }
